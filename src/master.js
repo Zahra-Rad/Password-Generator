@@ -247,7 +247,7 @@ const strengthChecker = (finalChars) => {
     color = "orange";
   } else if (finalChars.length == 3 || (len >= 11 && len <= 15)) {
     hint = "* Good";
-    color = "rgb(208, 255, 0)";
+    color = "rgb(255, 208, 0)";
   } else if (finalChars.length == 4 || (len >= 16 && len <= 20)) {
     hint = "* Strong";
     color = "green";
