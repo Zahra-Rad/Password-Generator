@@ -1,6 +1,6 @@
 :root {
   --light-main-color: #319795;
-  --dark-main-color: #206261;
+  --dark-main-color: #002d2c;
 }
 
 * {
@@ -16,6 +16,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
+  transition: 0.5s ease-out;
   > main {
     width: 600px;
     height: 500px;
@@ -46,7 +47,7 @@ body {
             margin: 5px 0 25px;
             > span {
               font-size: 20px;
-              margin: 0 -5px;
+              /* margin: 0 -5px; */
               color: var(--light-main-color);
               &:nth-of-type(odd) {
                 color: black;
@@ -190,13 +191,12 @@ body {
                   -webkit-appearance: none;
                   width: 100%;
                   height: 7px;
-                  /* background: var(--light-main-color); */
                   border-radius: 5px;
-                  /* background-size: 70% 100%;
-                        background-repeat: no-repeat; */
                   border: 1px solid var(--light-main-color);
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
                 }
-
                 input[type="range"]::-webkit-slider-thumb {
                   -webkit-appearance: none;
                   height: 20px;
@@ -205,23 +205,32 @@ body {
                   background: var(--light-main-color);
                   cursor: ew-resize;
                   box-shadow: 0 0 2px 0 #555;
-                  /* transition: background 0.3s ease-in-out; */
+                  z-index: 10;
                 }
-
                 input[type="range"]::-webkit-slider-runnable-track {
                   -webkit-appearance: none;
+                  z-index: 10;
                   box-shadow: none;
                   border: none;
-                  /* background: rgba(255, 255, 255, 0.592); */
                 }
-                > span {
-                  width: 65px;
-                  height: 7px;
+                > progress {
+                  -webkit-appearance: none;
                   background: var(--light-main-color);
-                  position: absolute;
-                  left: 0;
-                  top: 50%;
                   border-radius: 5px;
+                  height: 7px;
+                  width: 100%;
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  overflow: hidden;
+                }
+                progress::-webkit-progress-bar {
+                  background-color: #fff;
+                  border: 1px solid var(--light-main-color);
+                }
+                progress::-webkit-progress-value{
+                  z-index: 1;
+                  background: var(--light-main-color);
                 }
               }
             }
@@ -252,6 +261,7 @@ body {
           left: 2px;
           top: 50%;
           transform: translateY(-50%);
+          transition: 0.5s ease-out;
         }
       }
     }

@@ -21,7 +21,7 @@
     />
     <link rel="stylesheet" href="src/master.css" />
   </head>
-  <body>
+  <body id="body">
     <main>
       <section>
         <span class="icon-lock-open-alt"></span>
@@ -37,15 +37,15 @@
         </p>
         <div>
           <div>
-            <p></p>
-            <button class="icon-cw"></button>
+            <p id="password"></p>
+            <button class="icon-cw" id="refresh"></button>
           </div>
           <button>
             <span class="material-symbols-outlined"> content_copy </span>
-            <span>Copy</span>
+            <span id="copy">Copy</span>
           </button>
         </div>
-        <p id="strength">weak</p>
+        <p id="strength"></p>
       </section>
       <section>
         <div>
@@ -73,18 +73,18 @@
         <div>
           <div>
             <label for="length">Password Length: </label>
-            <input type="text" id="length" />
+            <input type="text" id="length" value="" />
           </div>
           <div>
-            <input type="range" id="range" value="15" min="1" max="50" />
-            <span></span>
+            <input type="range" id="range" value="10" min="1" max="20" />
+            <progress min="0" max="20" value="10"></progress>
           </div>
         </div>
       </section>
       <button id="mode">
-          <span class="icon-moon"></span>
-          <span class="icon-light-up"></span>
-          <span></span>
+        <span class="icon-moon"></span>
+        <span class="icon-light-up"></span>
+        <span id="modeSpan"></span>
       </button>
     </main>
     <script src="src/master.js"></script>
